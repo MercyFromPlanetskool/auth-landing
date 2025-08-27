@@ -1,0 +1,153 @@
+@media (orientation: landscape) and (max-width: 1024px) {
+  #getStartedBtn {
+    left: auto;
+    right: 32px;
+    bottom: 32px;
+    transform: none;
+    width: auto;
+    min-width: 160px;
+    border-radius: 24px;
+  }
+}
+@media (max-width: 768px) {
+  #getStartedBtn {
+    font-size: 16px;
+    min-height: 48px;
+    padding: 12px 24px;
+    border-radius: 24px;
+    width: calc(100vw - 40px);
+    max-width: 340px;
+    left: 50%;
+    right: auto !important;
+    bottom: 5%;
+    transform: translateX(-50%);
+    box-shadow: 0 8px 24px rgba(59, 130, 246, 0.35), 0 12px 40px rgba(0,0,0,0.4);
+  }
+@media (orientation: landscape) and (max-width: 1024px) {
+  #getStartedBtn {
+    left: auto;
+    right: 32px;
+    bottom: 32px;
+    transform: none;
+    width: auto;
+    min-width: 160px;
+    border-radius: 24px;
+  }
+}
+}
+
+@media (max-width: 480px) {
+  #getStartedBtn {
+    font-size: 15px;
+    min-height: 44px;
+    padding: 10px 16px;
+    border-radius: 18px;
+    width: calc(100vw - 24px);
+    left: 50%;
+    right: auto !important;
+    bottom: 16px !important;
+    transform: translateX(-50%);
+    box-shadow: 0 8px 24px rgba(59, 130, 246, 0.35), 0 12px 40px rgba(0,0,0,0.4);
+  }
+}
+/* === VIEWPORT RESPONSIVE SETUP === */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  background-color: #000;
+  /* Ensure background is black */
+}
+
+/* Canvas takes full viewport space and is interactive */
+canvas {
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw !important;
+  height: 100vh !important;
+  cursor: grab;
+  z-index: 1;
+  /* Indicate interactivity */
+}
+
+canvas:active {
+  cursor: grabbing;
+}
+
+/* PlanetKool Logo positioned at Earth center */
+#planetkool-logo {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 15; /* Above Earth but below login panel */
+  pointer-events: none; /* Don't interfere with Earth interactions */
+  display: none; /* Hidden initially, shown via JavaScript */
+  /* Transition removed - smooth movement now handled by JavaScript interpolation for better sync with Earth */
+}
+
+#planetkool-logo img {
+  width: auto; /* Will be set by JavaScript */
+  height: auto; /* Maintains aspect ratio */
+  max-width: none;
+  max-height: none;
+  /* Size will be controlled by JavaScript based on actual Earth radius */
+  filter: drop-shadow(0 0 15px rgba(0, 0, 0, 0.7));
+  opacity: 0.95;
+  transition: width 0.3s ease, height 0.3s ease; /* Smooth size transitions */
+}
+
+/* Get Started Button - Glass Effect */
+
+#getStartedBtn {
+  position: fixed !important;
+  bottom: 5% !important;
+  right: 5% !important;
+  top: auto !important;
+  left: auto !important;
+  transform: none !important;
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.3), rgba(37, 99, 235, 0.2));
+  border: 1px solid rgba(59, 130, 246, 0.4);
+  border-radius: 50px;
+  color: #fff;
+  font-size: clamp(16px, 3vw, 24px);
+  font-family: 'Inter', 'Segoe UI', 'Roboto', Arial, sans-serif;
+  font-weight: 600;
+  padding: 15px 30px;
+  cursor: pointer;
+  z-index: 20;
+  pointer-events: auto;
+  box-shadow: 0 4px 16px rgba(59, 130, 246, 0.25), 0 8px 32px rgba(0,0,0,0.3);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.4s ease, transform 0.4s ease;
+  overflow: hidden;
+  outline: none;
+}
+
+#getStartedBtn:hover {
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.4), rgba(37, 99, 235, 0.3));
+  border-color: rgba(59, 130, 246, 0.6);
+  box-shadow: 0 8px 24px rgba(59, 130, 246, 0.35), 0 12px 40px rgba(0,0,0,0.4);
+  transform: translateY(-2px);
+}
+
+#getStartedBtn:active {
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.3), rgba(37, 99, 235, 0.2));
+  box-shadow: 0 4px 16px rgba(59, 130, 246, 0.25), 0 4px 20px rgba(0,0,0,0.3);
+  transform: translateY(0);
+}
+
+#getStartedBtn:focus {
+  outline: 2px solid rgba(59, 130, 246, 0.5);
+  outline-offset: 2px;
+}
